@@ -1,0 +1,29 @@
+#--------------------------------------------------
+# Répertoire : /articles/
+#--------------------------------------------------
+
+Options +FollowSymLinks
+RewriteEngine On
+RewriteBase /
+
+#--------------------------------------------------
+# Règles de réécriture d'URL :
+#--------------------------------------------------
+
+# Article sans numéro de page :
+RewriteRule ^menus-([0-9]+)-([0-9]+)\.html$   principal.php?lan=$1&menu=$2 [L]
+
+# Article avec numéro de page :
+RewriteRule ^menus-([0-9]+)\.html$   principal.php?menu=$1 [L]
+
+# Article sans numéro de page :
+RewriteRule ^article-([0-9]+)-([0-9]+)\.html$   articles.php?lan=$1&art=$2 [L]
+
+# Article avec numéro de page :
+RewriteRule ^article-([0-9]+)\.html$   articles.php?art=$1 [L]
+
+# Article sans numéro de page :
+RewriteRule ^photo-([0-9]+)-([0-9]+)\.html$   galerie.php?lan=$1&gal=$2 [L]
+
+# Article avec numéro de page :
+RewriteRule ^photo-([0-9]+)\.html$   galerie.php?gal=$1 [L]
